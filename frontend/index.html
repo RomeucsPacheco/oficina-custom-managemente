@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina Custom - Projetos Exclusivos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para dar um visual de "Vitrine" no Site Público */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(18, 18, 20, 0.8), rgba(18, 18, 20, 0.95)), url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border: 1px solid #29292e;
+        }
+        .hero h2 { font-size: 2.5rem; color: #ffffff; margin-bottom: 10px; }
+        .hero p { color: #a9a9b2; font-size: 1.2rem; max-width: 600px; margin: 0 auto 20px; }
+        
+        .grid-secao {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .item-vitrine {
+            background-color: #202024;
+            border: 1px solid #29292e;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .item-vitrine img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        .highlight { color: #00b37e; font-weight: bold; font-size: 1.2rem; }
+        .secao-titulo {
+            border-left: 4px solid #00b37e;
+            padding-left: 10px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7c7c8a;
+            border-top: 1px solid #29292e;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚙️ Oficina Custom</h1>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="veiculos.html">Veículos</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="agendamentos.html">Agendamentos</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h2>Projetos de Alto Desempenho & Som Automotivo</h2>
+            <p>Traga o seu veículo para uma transformação completa. Engenharia de som, suspensões sob medida e personalização extrema.</p>
+            <a href="agendamentos.html" class="btn-salvar" style="text-decoration: none; display: inline-block; width: auto; padding: 12px 30px;">Agendar Orçamento</a>
+        </section>
+
+        <h3 class="secao-titulo">Nossas Especialidades</h3>
+        <section class="grid-secao">
+            <div class="item-vitrine">
+                <h3>Som Automotivo</h3>
+                <p style="color: #a9a9b2; margin: 10px 0;">Projetos acústicos de alta fidelidade, caixas dutadas e molduras personalizadas para o porta-malas.</p>
+                <span class="highlight">Grave de Respeito</span>
+            </div>
+            <div class="item-vitrine">
+                <h3>Suspensões</h3>
+                <p style="color: #a9a9b2; margin: 10px 0;">Instalação e gerenciamento de suspensão a ar, rosca e preparação de chassis com segurança.</p>
+                <span class="highlight">Estilo e Altura</span>
+            </div>
+            <div class="item-vitrine">
+                <h3>Estética Avançada</h3>
+                <p style="color: #a9a9b2; margin: 10px 0;">Envelopamento premium (Wrap), vitrificação de pintura e detalhes internos em fibra de carbono.</p>
+                <span class="highlight">Visual Exclusivo</span>
+            </div>
+        </section>
+
+        <h3 class="secao-titulo">Últimos Projetos na Cidade</h3>
+        <section class="grid-secao">
+            <div class="item-vitrine">
+                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=500&q=80" alt="Projeto Sedan">
+                <h3>Sedan Custom Pro</h3>
+                <p style="color: #a9a9b2; font-size: 0.9rem;">Mala totalmente remodelado com subwoofers pesados e fiação blindada.</p>
+            </div>
+            <div class="item-vitrine">
+                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=500&q=80" alt="Projeto Hatch">
+                <h3>Hatch Euro Style</h3>
+                <p style="color: #a9a9b2; font-size: 0.9rem;">Suspensão a ar revisada com bolsas de alta performance e rodas exclusivas.</p>
+            </div>
+            <div class="item-vitrine">
+                <img src="https://images.unsplash.com/photo-1611245555447-e80ee53a4206?auto=format&fit=crop&w=500&q=80" alt="Projeto Esportivo">
+                <h3>Sport Blackout</h3>
+                <p style="color: #a9a9b2; font-size: 0.9rem;">Remapeamento de performance e upgrade de falantes internos nas portas.</p>
+            </div>
+        </section>
+
+        <section class="card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;">
+            <div>
+                <h3 class="secao-titulo" style="margin-bottom: 15px;">Sobre a Oficina</h3>
+                <p style="color: #a9a9b2; line-height: 1.6; margin-bottom: 15px;">
+                    Nascemos da paixão por carros modificados e som de alta potência. Nosso foco não é apenas fazer barulho na cidade, mas entregar projetos com engenharia de áudio impecável, cabos premium e acabamento perfeito que se integram ao design original do carro.
+                </p>
+                <p style="color: #ffffff; font-weight: bold;">📍 Av. Principal das Customizações, Nº 1000 - Centro</p>
+            </div>
+            <div>
+                <div style="background: #121214; border: 1px solid #29292e; height: 200px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #7c7c8a;">
+                    [ Mapa de Localização Interativo ]
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Oficina Custom Management. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

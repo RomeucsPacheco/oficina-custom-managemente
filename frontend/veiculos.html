@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Oficina - Veículos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚙️ Oficina Custom - Painel Admin</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="veiculos.html" class="active">Veículos</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="agendamentos.html">Agendamentos</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Novo Veículo</h2>
+                <form id="formVeiculo">
+                    <div class="form-group">
+                        <label for="selectCliente">Dono / Cliente *</label>
+                        <select id="selectCliente" required>
+                            <option value="">Selecione um cliente...</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="marca">Marca *</label>
+                        <input type="text" id="marca" required placeholder="Ex: Renault">
+                    </div>
+                    <div class="form-group">
+                        <label for="modelo">Modelo *</label>
+                        <input type="text" id="modelo" required placeholder="Ex: Fluence">
+                    </div>
+                    <div class="form-group">
+                        <label for="ano">Ano</label>
+                        <input type="number" id="ano" placeholder="Ex: 2014">
+                    </div>
+                    <div class="form-group">
+                        <label for="placa">Placa *</label>
+                        <input type="text" id="placa" required placeholder="Ex: ABC1D23" style="text-transform: uppercase;">
+                    </div>
+                    <button type="submit" class="btn-salvar">Salvar Veículo</button>
+                </form>
+            </section>
+
+            <section class="card">
+                <h2>Veículos na Oficina</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Veículo</th>
+                            <th>Placa</th>
+                            <th>Dono</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaVeiculos">
+                        </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/veiculos.js"></script>
+</body>
+</html>

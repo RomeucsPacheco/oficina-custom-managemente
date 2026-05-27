@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Oficina - Serviços</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚙️ Oficina Custom - Painel Admin</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="veiculos.html">Veículos</a>
+                <a href="servicos.html" class="active">Serviços</a>
+                <a href="agendamentos.html">Agendamentos</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Novo Serviço / Modificação</h2>
+                <form id="formServico">
+                    <div class="form-group">
+                        <label for="nomeServico">Nome do Serviço *</label>
+                        <input type="text" id="nomeServico" required placeholder="Ex: Projeto de Som Mala Completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Categoria *</label>
+                        <select id="categoria" required>
+                            <option value="">Selecione...</option>
+                            <option value="Som Automotivo">Som Automotivo</option>
+                            <option value="Suspensão">Suspensão</option>
+                            <option value="Rodas e Pneus">Rodas e Pneus</option>
+                            <option value="Estética / Envelopamento">Estética / Envelopamento</option>
+                            <option value="Performance">Performance</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="precoBase">Preço Base (R$) *</label>
+                        <input type="number" step="0.01" id="precoBase" required placeholder="Ex: 1500.00">
+                    </div>
+                    <div class="form-group">
+                        <label for="tempoEstimado">Tempo Estimado (Horas)</label>
+                        <input type="number" id="tempoEstimado" placeholder="Ex: 8">
+                    </div>
+                    <button type="submit" class="btn-salvar">Salvar Serviço</button>
+                </form>
+            </section>
+
+            <section class="card">
+                <h2>Serviços Oferecidos</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Serviço</th>
+                            <th>Categoria</th>
+                            <th>Preço Base</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaServicos">
+                        </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/servicos.js"></script>
+</body>
+</html>
