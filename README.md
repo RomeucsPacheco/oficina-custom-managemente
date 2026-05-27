@@ -1,6 +1,7 @@
+Markdown
 # ⚙️ Oficina Custom - Management System
 
-Um sistema de gerenciamento ponta a ponta (End-to-End) desenvolvido para oficinas de customização automotiva, focado em performance, estética e projetos de som de alta fidelidade. O sistema conta com uma API REST robusta, banco de dados relacional e duas interfaces de usuário: um site institucional público e um painel administrativo completo com operações de CRUD.
+Um sistema de gerenciamento ponta a ponta (End-to-End) desenvolvido para oficinas de customização automotiva, focado em performance, estética e projetos de som de alta velocidade. O sistema conta com uma API REST robusta, banco de dados relacional e duas interfaces de usuário: um site institucional público e um painel administrativo completo com operações de CRUD.
 
 ---
 
@@ -77,14 +78,14 @@ Properties
 spring.datasource.url=jdbc:mysql://localhost:3306/oficina_db?useSSL=false&serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=SUA_SENHA_AQUI
-3. Inicializando a API Spring Boot
+3. Executando a API Spring Boot
 Na pasta raiz do projeto, execute o comando abaixo no terminal para compilar e subir o servidor:
 
 Bash
 ./mvnw spring-boot:run
 O backend estará rodando e escutando requisições na porta 8080 (http://localhost:8080). O Hibernate criará todas as tabelas automaticamente no primeiro início.
 
-4. Inicializando o Frontend
+4. Executando o Frontend
 Não é necessário instalar servidores de páginas.
 
 Navegue até a pasta frontend/.
