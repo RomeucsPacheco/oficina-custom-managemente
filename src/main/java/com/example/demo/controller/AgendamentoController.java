@@ -30,4 +30,28 @@ public class AgendamentoController {
         Agendamento novoAgendamento = agendamentoRepository.save(agendamento);
         return new ResponseEntity<>(novoAgendamento, HttpStatus.CREATED);
     }
+
+    // PUT: http://localhost:8080/api/agendamentos/{id} (Editar)
+    @PutMapping("/{id}")
+    public ResponseEntity<Agendamento> editar(@PathVariable Long id, @RequestBody Agendamento dadosAtualizados) {
+        return agendamentoRepository.findById(id).map(agendamento -> {
+            agendamento.setDataAgendamento(dadosAtualizados.getDataAgendamento());
+            agendamento.setStatus(dadosAtualizados.getStatus());
+            agendamento.setObservacoes(dadosAtualizados.getObservacoes());
+            if (dadosAtualizados.getVeiculo() != null) agendamento.setVeiculo(dadosAtualizados.getVeiculo());
+            if (dadosAtualizados.getServico() != null) agendamento.setServico(dadosAtualizados.getServico());
+            Agendamento atualizado = agendamentoRepository.save(agendamento);
+            return ResponseEntity.ok(atualizado);
+        }).orElse(ResponseEntity.notFound().build());
+    }
+
+    // DELETE: http://localhost:8080/api/agendamentos/{id} (Excluir)
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> excluir(@PathVariable Long id) {
+        if (agendamentoRepository.existsById(id)) {
+            agendamentoRepository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
 }

@@ -21,7 +21,7 @@
 
         <main>
             <section class="card">
-                <h2>Novo Serviço / Modificação</h2>
+                <h2 id="tituloForm">Novo Serviço / Modificação</h2>
                 <form id="formServico">
                     <div class="form-group">
                         <label for="nomeServico">Nome do Serviço *</label>
@@ -46,7 +46,8 @@
                         <label for="tempoEstimado">Tempo Estimado (Horas)</label>
                         <input type="number" id="tempoEstimado" placeholder="Ex: 8">
                     </div>
-                    <button type="submit" class="btn-salvar">Salvar Serviço</button>
+                    <button type="submit" id="btnSalvar" class="btn-salvar">Salvar Serviço</button>
+                    <button type="button" id="btnCancelar" class="btn-cancelar" style="display: none;">Cancelar Edição</button>
                 </form>
             </section>
 
@@ -59,7 +60,7 @@
                             <th>Serviço</th>
                             <th>Categoria</th>
                             <th>Preço Base</th>
-                        </tr>
+                            <th>Ações</th> </tr>
                     </thead>
                     <tbody id="tabelaServicos">
                         </tbody>

@@ -32,4 +32,26 @@ public class ClienteController {
         Cliente novoCliente = clienteRepository.save(cliente);
         return new ResponseEntity<>(novoCliente, HttpStatus.CREATED);
     }
+
+    // PUT: http://localhost:8080/api/clientes/{id} (Editar)
+    @PutMapping("/{id}")
+    public ResponseEntity<Cliente> editar(@PathVariable Long id, @RequestBody Cliente dadosAtualizados) {
+        return clienteRepository.findById(id).map(cliente -> {
+            cliente.setNome(dadosAtualizados.getNome());
+            cliente.setTelefone(dadosAtualizados.getTelefone());
+            cliente.setEmail(dadosAtualizados.getEmail());
+            Cliente atualizado = clienteRepository.save(cliente);
+            return ResponseEntity.ok(atualizado);
+        }).orElse(ResponseEntity.notFound().build());
+    }
+
+    // DELETE: http://localhost:8080/api/clientes/{id} (Excluir)
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> excluir(@PathVariable Long id) {
+        if (clienteRepository.existsById(id)) {
+            clienteRepository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
 }

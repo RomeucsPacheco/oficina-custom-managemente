@@ -30,4 +30,27 @@ public class ServicoController {
         Servico novoServico = servicoRepository.save(servico);
         return new ResponseEntity<>(novoServico, HttpStatus.CREATED);
     }
+
+    // PUT: http://localhost:8080/api/servicos/{id} (Editar)
+    @PutMapping("/{id}")
+    public ResponseEntity<Servico> editar(@PathVariable Long id, @RequestBody Servico dadosAtualizados) {
+        return servicoRepository.findById(id).map(servico -> {
+            servico.setNomeServico(dadosAtualizados.getNomeServico());
+            servico.setCategoria(dadosAtualizados.getCategoria());
+            servico.setPrecoBase(dadosAtualizados.getPrecoBase());
+            servico.setTempoEstimadoHoras(dadosAtualizados.getTempoEstimadoHoras());
+            Servico atualizado = servicoRepository.save(servico);
+            return ResponseEntity.ok(atualizado);
+        }).orElse(ResponseEntity.notFound().build());
+    }
+
+    // DELETE: http://localhost:8080/api/servicos/{id} (Excluir)
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> excluir(@PathVariable Long id) {
+        if (servicoRepository.existsById(id)) {
+            servicoRepository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
 }

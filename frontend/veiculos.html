@@ -21,7 +21,7 @@
 
         <main>
             <section class="card">
-                <h2>Novo Veículo</h2>
+                <h2 id="tituloForm">Novo Veículo</h2>
                 <form id="formVeiculo">
                     <div class="form-group">
                         <label for="selectCliente">Dono / Cliente *</label>
@@ -45,7 +45,8 @@
                         <label for="placa">Placa *</label>
                         <input type="text" id="placa" required placeholder="Ex: ABC1D23" style="text-transform: uppercase;">
                     </div>
-                    <button type="submit" class="btn-salvar">Salvar Veículo</button>
+                    <button type="submit" id="btnSalvar" class="btn-salvar">Salvar Veículo</button>
+                    <button type="button" id="btnCancelar" class="btn-cancelar" style="display: none;">Cancelar Edição</button>
                 </form>
             </section>
 
@@ -58,7 +59,7 @@
                             <th>Veículo</th>
                             <th>Placa</th>
                             <th>Dono</th>
-                        </tr>
+                            <th>Ações</th> </tr>
                     </thead>
                     <tbody id="tabelaVeiculos">
                         </tbody>

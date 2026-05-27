@@ -137,3 +137,71 @@ th {
 tr:hover {
     background-color: #29292e;
 }
+
+/* Botões de Ação na Tabela */
+.btn-deletar {
+    background-color: #e52e4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 0.85rem;
+}
+.btn-deletar:hover { background-color: #cc2441; }
+
+.btn-editar {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+.btn-editar:hover { background-color: #357abd; }
+
+.btn-cancelar {
+    background-color: #7c7c8a;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Forçar os botões de ação a ficarem lado a lado e alinhados */
+table td:last-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;       /* Espaçamento perfeito entre o Editar e Excluir */
+    border-bottom: none; /* Evita bizarrias de linha interna */
+    height: 100%;
+}
+
+/* Garante que os botões tenham tamanhos consistentes */
+.btn-editar, .btn-deletar {
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border: none;
+    color: white;
+    transition: background 0.2s;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.btn-editar { background-color: #4a90e2; }
+.btn-editar:hover { background-color: #357abd; }
+
+.btn-deletar { background-color: #e52e4d; }
+.btn-deletar:hover { background-color: #cc2441; }
