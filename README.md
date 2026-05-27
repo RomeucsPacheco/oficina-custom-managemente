@@ -48,3 +48,64 @@ demo/
 │       └── repository/        # Interfaces de persistência (JpaRepository)
 ├── mvnw                       # Maven Wrapper
 └── pom.xml                    # Gerenciador de dependências do ecossistema Maven
+🗄️ Modelo de Dados (Relacionamentos)
+O banco de dados relacional oficina_db foi modelado para garantir integridade referencial:
+
+Cliente (1 : N) Veículo: Um cliente pode ter vários veículos cadastrados, mas um veículo pertence a apenas um cliente.
+
+Veículo (1 : N) Agendamento: Um veículo pode ter várias ordens de serviço/agendamentos históricos.
+
+Serviço (1 : N) Agendamento: Um serviço do catálogo pode ser vinculado a múltiplos agendamentos diferentes.
+
+🚀 Como Executar o Projeto Localmente
+Pré-requisitos
+Java 21 instalado.
+
+MySQL Server ativo no computador.
+
+MySQL Workbench (ou ferramenta equivalente).
+
+1. Configurando o Banco de Dados
+Abra o seu terminal do MySQL ou Workbench e certifique-se de criar o esquema do banco:
+
+SQL
+CREATE DATABASE oficina_db;
+2. Configurando o Backend
+Abra o arquivo src/main/resources/application.properties e ajuste as credenciais de acesso ao seu MySQL local:
+
+Properties
+spring.datasource.url=jdbc:mysql://localhost:3306/oficina_db?useSSL=false&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=SUA_SENHA_AQUI
+3. Inicializando a API Spring Boot
+Na pasta raiz do projeto, execute o comando abaixo no terminal para compilar e subir o servidor:
+
+Bash
+./mvnw spring-boot:run
+O backend estará rodando e escutando requisições na porta 8080 (http://localhost:8080). O Hibernate criará todas as tabelas automaticamente no primeiro início.
+
+4. Inicializando o Frontend
+Não é necessário instalar servidores de páginas.
+
+Navegue até a pasta frontend/.
+
+Dê um duplo clique no arquivo index.html para abrir o site público no seu navegador de preferência.
+
+Utilize o menu de navegação superior para acessar e gerenciar as telas do Painel Administrativo.
+
+📈 Funcionalidades Prontas
+Site Institucional: Home page contendo 4 seções estratégicas detalhando as especialidades da oficina, portfólio de projetos concluídos e localização.
+
+CRUD Completo (4 Entidades): Telas interativas para Cadastrar, Listar, Editar e Excluir dados de:
+
+Clientes (Nome, Telefone, E-mail).
+
+Veículos (Marca, Modelo, Ano, Placa e Vínculo com o Dono).
+
+Catálogo de Serviços (Nome do Serviço, Categoria, Preço Base e Horas Estimadas).
+
+Agendamentos / Ordens de Serviço (Vínculo de Carro, Serviço Escolhido, Data, Observações do Projeto e Status em tempo real).
+
+Persistência Reativa: Operações efetuadas na interface refletem instantaneamente no banco de dados através de chamadas assíncronas assinaladas pelo JavaScript.
+
+Desenvolvido como projeto prático avaliativo aplicado à disciplina de desenvolvimento de sistemas acadêmicos.
